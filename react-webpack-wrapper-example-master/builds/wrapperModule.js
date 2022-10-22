@@ -1,4 +1,4 @@
-var showChatTemplate =
+var wrapperModule =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -59,14 +59,47 @@ var showChatTemplate =
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var showChatTemplate = function showChatTemplate(messages, element) {
-	  var delay = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
-	  var height = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 300;
-
-	  _reactDom2.default.render(_react2.default.createElement(_chatTemplate.Conversation, { delay: delay, height: height, messages: messages }), element);
+	var wrapperModule = function wrapperModule(methodName, data, element) {
+	  if (methodName == 'InsertData') {
+	    InsertData(methodName, data, element);
+	  } else if (methodName == 'GetData') {
+	    GetData(methodName, data, element);
+	  } else if (methodName == 'EditData') {
+	    EditData(methodName, data, element);
+	  } else if (methodName == 'UpdateData') {
+	    UpdateData(methodName, data, element);
+	  }
 	};
 
-	module.exports = showChatTemplate;
+	var InsertData = function InsertData(methodName, data, element) {
+	  alert("InsertData function called - Method name : " + methodName + "Data : " + data);
+	};
+
+	var GetData = function GetData(methodName, data, element) {
+	  alert("GetData function called - Method name : " + methodName + "Data : " + data);
+	  _reactDom2.default.render(_react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      'Hello : ',
+	      data,
+	      ' '
+	    ),
+	    ' '
+	  ), element);
+	};
+
+	var EditData = function EditData(methodName, data, element) {
+	  alert("EditData function called - Method name : " + methodName + "Data : " + data);
+	};
+
+	var UpdateData = function UpdateData(methodName, data, element) {
+	  alert("UpdateData function called - Method name : " + methodName + "Data : " + data);
+	};
+
+	module.exports = wrapperModule;
 
 /***/ }),
 /* 1 */

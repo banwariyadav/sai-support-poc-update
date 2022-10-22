@@ -1,12 +1,12 @@
 const webpack = require('webpack');
 
-module.exports = {
+module.exports = [{
   entry:  './wrapper.js',
   output: {
       libraryTarget: 'var',
-      library: 'showChatTemplate',
+      library: 'wrapperModule',
       path:     'builds',
-      filename: 'chat-template-min.js',
+      filename: 'wrapperModule-min.js',
   },
   module: {
       loaders: [
@@ -24,4 +24,5 @@ module.exports = {
       }
     })
   ],
-};
+}
+];
